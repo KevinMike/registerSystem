@@ -1,4 +1,4 @@
-#registerAssitantModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='Registro de un nuevo participante',ng-module='assistantApp')
+#registerAssitantModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='Registro de un nuevo participante')
   .modal-dialog(role='document',ng-controller='registerAssistant')
     form.modal-content(ng-submit='registerAssistantSubmit()')
       .modal-header
@@ -18,11 +18,7 @@
             input.form-control(type='text', placeholder='Ingresar Apellidos',name='lastname',required,ng-model='assistantData.lastname',style='text-transform: uppercase')
           .form-group
               label(for='type') Seleccionar condición del participante
-              select.form-control(name='type',ng-model='assistantData.type')
-                option(selected='selected') Estudiante de la UNJBG
-                option Egresado de la UNJBG (Código 2014-2015)
-                option Estudiante de otra universidad
-                option Profesional
+              select.form-control(name='type',ng-model='assistantData.type',ng-options="opt for opt in options",required)
           .form-group
                 label(for='university') Universidad / Centro Laboral
                 input.form-control(type='text', placeholder='Nombre de la Universidad de Procedencia',name='university',ng-model='assistantData.university',style='text-transform: uppercase')

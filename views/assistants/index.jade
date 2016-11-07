@@ -1,27 +1,28 @@
 extends ../layout
 
 block content
-    include ../modals/registerAssistantModal
-    .container-fluid
-        br
-        table#assistantsTable.table(class="display",cellspacing="0",width="100%")
-            thead
-                tr
-                    td DNI
-                    td Apellidos
-                    td Nombres
-                    td Condición
-                    td Universidad/Centro de Empleo
-                    td Año Académico
-            tbody
-                each item in assistants
+    .container-fluid(ng-app='registerApp')
+        include ../modals/registerAssistantModal
+        .row
+            br
+            table#assistantsTable.table(class="display",cellspacing="0",width="100%")
+                thead
                     tr
-                        td #{item.dni}
-                        td #{item.lastname}
-                        td #{item.firstname}
-                        td #{item.type}
-                        td #{item.university}
-                        td #{item.year}
+                        td DNI
+                        td Apellidos
+                        td Nombres
+                        td Condición
+                        td Universidad/Centro de Empleo
+                        td Año Académico
+                tbody
+                    each item in assistants
+                        tr
+                            td #{item.dni}
+                            td #{item.lastname}
+                            td #{item.firstname}
+                            td #{item.type}
+                            td #{item.university}
+                            td #{item.year}
 
 block javascripts
-    script(src='/javascripts/registerAssistant.js')
+    script(src='/javascripts/register.js')
