@@ -1,0 +1,21 @@
+extends layout
+block stylesheet
+
+
+block content
+    include modals/registerAssistantModal
+    .container(style='text-align:center')
+        .row(ng-module='registerApp')
+        h1= title
+        p Registro de Asistencia
+        br
+        .box(ng-controller='registerController')
+            form(ng-submit='submitRegisterForm()')
+                .form-group
+                    label Ingrese el DNI
+                    input.form-control.btn-register(type='text',name='dni',ng-model='registerData.dni',required)
+                input#registerButton.btn.btn-primary(type='submit',value='Registrar',ladda='loading',style='width:100%')
+
+block javascripts
+    script(src='/javascripts/register.js')
+    script(src='/javascripts/registerAssistant.js')
