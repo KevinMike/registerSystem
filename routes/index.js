@@ -49,7 +49,7 @@ router.post('/registrar', function (req, res) {
             if (dni != null) {
                 register.create({
                     assistantDni: req.body.dni,
-                    date: moment(new Date()).unix()
+                    date: moment(new Date())
                 })
                     .then(function (data) {
                         return res.status(200).send({message: 'Se marcó el registro de asistencia con éxito'});

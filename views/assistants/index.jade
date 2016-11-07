@@ -17,12 +17,12 @@ block content
                 tbody
                     each item in assistants
                         tr
-                            td #{item.dni}
-                            td #{item.lastname}
-                            td #{item.firstname}
-                            td #{item.type}
-                            td #{item.university}
-                            td #{item.year}
+                            td #{item.dni.toUpperCase()}
+                            td #{item.lastname.toUpperCase()}
+                            td #{item.firstname.toUpperCase()}
+                            td #{item.type.toUpperCase()}
+                            td #{item.university.toUpperCase()}
+                            td #{item.year.toUpperCase()}
 
 block javascripts
     script(src='/javascripts/register.js')
