@@ -19,6 +19,17 @@ router.get('/asistentes', function (req, res) {
         })
 });
 
+router.get('/registro-asistencia', function (req, res) {
+    register.findAll()
+        .then(function (data) {
+            res.send(data);
+        })
+        .catch(function (err) {
+            res.send('Catch a error: ' + err)
+        })
+});
+
+
 router.post('/registrar-asistente', function (req, res) {
     assistants
         .findOrCreate({where: {dni: req.body.dni}, defaults: req.body})
