@@ -11,6 +11,7 @@ var registerApp = angular.module('registerApp', ['angular-ladda'])
         $scope.loading = false;
         $scope.submitRegisterForm = function () {
             $scope.loading = true;
+            $scope.registerData.date = new Date();
             $http({
                 method: 'POST',
                 url: '/registrar',

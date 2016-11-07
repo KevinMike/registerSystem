@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 var assistants = require('../models/asistentes');
 var register = require('../models/register');
-var moment = require('moment-timezone');
-moment().tz("America/Lima").format();
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -49,7 +47,7 @@ router.post('/registrar', function (req, res) {
             if (dni != null) {
                 register.create({
                     assistantDni: req.body.dni,
-                    date: moment(new Date())
+                    date: req.body.date
                 })
                     .then(function (data) {
                         return res.status(200).send({message: 'Se marcó el registro de asistencia con éxito'});
